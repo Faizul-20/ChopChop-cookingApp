@@ -104,14 +104,80 @@ Cooking_Dash/
 
 ---
 
+<br>
+<br>
+<br>
+
+# 🚀 Alur Git & Push ke GitHub
+---
+# 1. Cek branch yang sedang aktif
+
+```bash
+
+git branch
+```
+- Branch aktif ditandai dengan *.
+
+- Pastikan berada di branch yang tepat sebelum mulai kerja (misal dev atau feature branch).
+---
+# 2. Buat branch feature baru (dari dev)
+```bash
+git checkout dev
+git pull                # update branch dev terbaru
+git checkout -b feature/nama-fitur
+```
+### Contoh :
+```bash
+git checkout -b feature/generate-recipe
+```
+---
+# 3. Kerjakan fitur dan commit perubahan
+
+```bash
+git add .
+git commit -m "Tambah fitur generate resep otomatis"
+```
+Gunakan pesan commit deskriptif dan jelas.
+
+---
+# 4. Push branch ke GitHub
+```bash
+git push -u origin feature/nama-fitur
+```
+
+---
+# 5. Merge branch feature ke dev
+### Setelah fitur selesai dan diuji:
+
+```bash
+git checkout dev
+git pull
+git merge feature/nama-fitur
+git push
+```
+
+---
+# 6. Merge dev ke main (release)
+### Setelah semua fitur di dev siap rilis:
+```bash
+git checkout main
+git pull
+git merge dev
+git push
+```
+---
+# 7. Hapus branch feature (opsional)
+```bash
+git branch -d feature/nama-fitur       # hapus lokal
+git push origin --delete feature/nama-fitur  # hapus remote
+```
 ## 🧭 Tujuan Akhir
 
 Dengan struktur dan aturan ini, setiap developer dapat:
 - Memahami alur proyek tanpa kebingungan.  
 - Menambahkan fitur baru tanpa mengacaukan struktur lama.  
-- Menjaga konsistensi antar branch dan tim.
-
----
+- Menjaga konsistensi antar branch dan tim. 
 
 _**Dokumen ini wajib dibaca sebelum memulai kontribusi ke proyek Flask ini.**_
 # ChopChop-cookingApp
+
