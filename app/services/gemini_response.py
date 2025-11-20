@@ -67,3 +67,9 @@ def get_response(input_user):
     
     #  Return hasil parsing yang sudah mendapatkan objek Python
     return parsing_response
+
+## Contoh penggunaan
+
+user_input = input("Bahan Yang anda miliki: ")
+result = get_response(user_input)
+print(result)
